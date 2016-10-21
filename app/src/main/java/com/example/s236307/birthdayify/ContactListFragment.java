@@ -24,9 +24,7 @@ public class ContactListFragment extends ListFragment implements OnItemClickList
         View view = inflater.inflate(R.layout.contact_list_fragment, container, false);
         cursorAdapter = new SimpleCursorAdapter(
                 getActivity(), android.R.layout.simple_list_item_1, cursor,
-                new String [] {"database_table_1", "database_table_2"},
-                new int[] { R.id.element}
-        )
+                new String [] {"database_table_1", "database_table_2"}, null, 0);
 
         return view;
     }
