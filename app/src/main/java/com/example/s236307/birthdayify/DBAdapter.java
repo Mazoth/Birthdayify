@@ -71,7 +71,8 @@ public class DBAdapter {
         @Override
         public void onCreate(SQLiteDatabase db) {
             String sql = "create table " + TABLE + " (" + ID + " integer primary key autoincrement, "
-                    + FIRSTNAME + " text, " + LASTNAME + " text, " + BIRTHDAY + " integer);";
+                    + FIRSTNAME + " text, " + LASTNAME + " text, "
+                    + PHONENUMBER + " text, " + BIRTHDAY + " integer);";
             Log.d(TAG, "oncreated sql" + sql);
             db.execSQL(sql);
         }
