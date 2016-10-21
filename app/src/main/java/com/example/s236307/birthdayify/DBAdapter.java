@@ -10,7 +10,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.provider.BaseColumns;
 import android.util.Log;
 
-}
 public class DBAdapter {
     Context context;
     static final String PHONENUMBER = "phoneNumber";
@@ -32,7 +31,7 @@ public class DBAdapter {
     }
 
     public DBAdapter open () throws SQLException {
-
+        return null;
     }
 
     public void close() {
@@ -61,7 +60,7 @@ public class DBAdapter {
     }
 
     public Cursor findOne() {
-
+        return null;
     }
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
