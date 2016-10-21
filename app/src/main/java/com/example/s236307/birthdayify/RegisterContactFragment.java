@@ -5,8 +5,10 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 
 public class RegisterContactFragment extends Fragment {
-    private DatePicker birthDatePicker;
-    private EditText firstNameField, lastNameField, phoneNumberField;
+    DatePicker birthDatePicker;
+    EditText firstNameField, lastNameField, phoneNumberField;
+
+
 
 
 }

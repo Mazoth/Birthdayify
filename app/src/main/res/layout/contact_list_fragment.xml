@@ -7,7 +7,7 @@
     android:paddingRight="8dp">
 
     <ListView
-        android:id="@id/android:list"
+        android:id="@+id/contactListview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
