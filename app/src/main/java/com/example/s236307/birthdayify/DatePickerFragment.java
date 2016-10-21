@@ -19,13 +19,9 @@ public class DatePickerFragment extends DialogFragment implements DatePickerDial
         int day = c.get(Calendar.DAY_OF_MONTH);
         return new DatePickerDialog(getActivity(), this, year, month, day);
     }
-
+    //TODO: Figure out how to populate datepicker with todays date
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        populateSetDate(year, month+1, day);
-    }
-    public void populateSetDate(int year, int month, int day) {
-        DatePicker dp = (DatePicker)
     }
 }
 

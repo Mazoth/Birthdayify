@@ -51,6 +51,7 @@ public class CustomListAdapter extends BaseAdapter {
         Contact contact = contactList.get(position);
         nameText.setText(contact.getFirstName() + " " + contact.getLastName());
         phoneNumberText.setText(contact.getPhoneNumber());
-        birthdayText.setText();
+        birthdayText.setText("");
+        return null; //TODO: Fix this method
     }
 }

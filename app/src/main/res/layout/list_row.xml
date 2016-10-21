@@ -1,25 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:padding="8dp">
+    android:padding="8dp"
+    android:orientation="horizontal"
+    android:background="@drawable/border">
 
     <TextView
         android:id="@+id/nameText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="My name goes here"
+        android:layout_marginTop="5dp" />
 
     <TextView
         android:id="@+id/phoneNumberText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/nameText"
+        android:text="phonenrplsboss"
         android:layout_marginTop="5dp"/>
 
     <TextView
         android:id="@+id/birthdayText"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/phoneNumberText"
+        android:text="Happybday"
         android:layout_marginTop="5dp"/>
-</RelativeLayout>
+
+</LinearLayout>
