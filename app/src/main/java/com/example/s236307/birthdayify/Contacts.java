@@ -19,11 +19,8 @@ import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-/**
- * Created by mkluf on 10/21/2016.
- */
 
-public class Contacts extends ListFragment implements LoaderCallbacks<Cursor> {
+public class Contacts extends ListFragment {
     LoaderManager loaderManager;
     CursorLoader cursorLoader;
     SimpleCursorAdapter mAdapter;
@@ -32,12 +29,6 @@ public class Contacts extends ListFragment implements LoaderCallbacks<Cursor> {
     public Contacts() {
     }
 
-
-    @Override
-    public void onLoadFinished(Loader<Cursor> loader, Cursor data) {
-        if(mAdapter != null && data != null) mAdapter.swapCursor(data);
-        else Log.v(TAG, "OnLoadFinished: mAdapter is null");
-    }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
@@ -58,23 +49,10 @@ public class Contacts extends ListFragment implements LoaderCallbacks<Cursor> {
         });
         loaderManager.initLoader(0, null, this);
     }
-    @Override
-    public Loader<Cursor> onCreateLoader(int arg0, Bundle arg1) {
-        String[] projection = {ContactsContract.Contacts.DISPLAY_NAME};
-        cursorLoader = new CursorLoader(getActivity().getBaseContext(),
-                ContactsContract.Contacts.CONTENT_URI, projection, null, null, null);
-        return cursorLoader;
-    }
-
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         return inflater.inflate(R.layout.contact_list_fragment, container, false);
     }
 
-    @Override
-    public void onLoaderReset(Loader<Cursor> loader) {
-        if(mAdapter != null) mAdapter.swapCursor(null);
-        else Log.v(TAG, "OnLoadFinished: mAdapter is null");
-    }
 }

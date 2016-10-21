@@ -14,13 +14,14 @@ import android.widget.Toast;
 
 
 public class ContactListFragment extends ListFragment implements OnItemClickListener {
-    private DBAdapter dbAdapter;
-    private Cursor cursor;
-    private SimpleCursorAdapter cursorAdapter;
+    ContactCP contactCP;
+    Cursor cursor;
+    SimpleCursorAdapter cursorAdapter;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        dbAdapter = new DBAdapter(getActivity());
-        cursor = dbAdapter.findAll();
+        contactCP = new ContactCP(getActivity());
+        cursor = contactCP.findAll();
         View view = inflater.inflate(R.layout.contact_list_fragment, container, false);
         cursorAdapter = new SimpleCursorAdapter(
                 getActivity(), android.R.layout.simple_list_item_1, cursor,
