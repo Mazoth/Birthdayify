@@ -4,15 +4,24 @@ package com.example.s236307.birthdayify;
 import java.util.Date;
 
 public class Contact {
-    private String firstName, lastName;
-    private int phoneNumber;
+    private String firstName, lastName, phoneNumber;
+    private int birthdayInMillis;
     private Date birthday;
 
-    public Contact (String firstName, String lastName, int phoneNumber, Date birthday) {
-        this.birthday = birthday;
+    public int getBirthdayInMillis() {
+        return birthdayInMillis;
+    }
+
+    public void setBirthdayInMillis(int birthdayInMillis) {
+        this.birthdayInMillis = birthdayInMillis;
+    }
+
+    public Contact (String firstName, String lastName, String phoneNumber, int birthdayInMillis) {
+        this.birthdayInMillis = birthdayInMillis;
         this.firstName = firstName;
         this.lastName = lastName;
         this.phoneNumber = phoneNumber;
+        birthday = new Date(birthdayInMillis);
     }
 
     public Date getBirthday() {
@@ -39,11 +48,11 @@ public class Contact {
         this.lastName = lastName;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhoneNumber(int phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 }

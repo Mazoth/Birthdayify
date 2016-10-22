@@ -1,4 +1,4 @@
-package com.example.s236307.birthdayify;
+package com.example.s236307.birthdayify.fragments;
 
 import android.app.ListFragment;
 import android.database.Cursor;
@@ -12,16 +12,15 @@ import android.widget.ArrayAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
+import com.example.s236307.birthdayify.R;
+
 
 public class ContactListFragment extends ListFragment implements OnItemClickListener {
-    ContactCP contactCP;
     Cursor cursor;
     SimpleCursorAdapter cursorAdapter;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        contactCP = new ContactCP(getActivity());
-        cursor = contactCP.findAll();
         View view = inflater.inflate(R.layout.contact_list_fragment, container, false);
         cursorAdapter = new SimpleCursorAdapter(
                 getActivity(), android.R.layout.simple_list_item_1, cursor,

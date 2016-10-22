@@ -1,4 +1,4 @@
-package com.example.s236307.birthdayify;
+package com.example.s236307.birthdayify.fragments;
 
 import android.app.Fragment;
 

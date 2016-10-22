@@ -1,58 +1,30 @@
 package com.example.s236307.birthdayify;
 
-import android.app.Fragment;
 import android.app.ListFragment;
-import android.app.LoaderManager;
-import android.app.LoaderManager.LoaderCallbacks;
 import android.content.CursorLoader;
-import android.content.Loader;
 import android.database.Cursor;
+import android.net.Uri;
 import android.os.Bundle;
-import android.provider.ContactsContract;
-import android.support.annotation.Nullable;
-import android.util.Log;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ListView;
+import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
-import android.widget.Toast;
 
 
 public class Contacts extends ListFragment {
-    LoaderManager loaderManager;
-    CursorLoader cursorLoader;
     SimpleCursorAdapter mAdapter;
-    String TAG = "Loader";
-
-    public Contacts() {
-    }
-
-
+    Uri allContacts;
+    CursorLoader cursorLoader;
+    Cursor cursor;
     @Override
-    public void onActivityCreated(Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        loaderManager = getActivity().getLoaderManager();
-        String[] uiBindFrom = {ContactsContract.Contacts.DISPLAY_NAME};
-        int[] uiBindTo = {android.R.id.text1};
-        mAdapter = new SimpleCursorAdapter(getActivity().getBaseContext(),
-                android.R.layout.simple_list_item_1, null, uiBindFrom, uiBindTo, 0);
-        ListView l = (ListView) getActivity().findViewById(R.id.contactListview);
-        l.setAdapter(mAdapter);
-        l.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getActivity().getBaseContext(), position + " klikket",
-                        Toast.LENGTH_SHORT).show();
-            }
-        });
-        loaderManager.initLoader(0, null, this);
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        allContacts = ContactCP.CONTENT_URI;
+        cursorLoader = new CursorLoader(getActivity().getBaseContext(),
+                allContacts, null, null, null, null);
+        cursor = cursorLoader.loadInBackground();
+        String[] columns = new String[]{ContactCP.NAME, ContactCP.PHONENUMBER, ContactCP.BIRTHDAY};
+        int[] views = new int[]{R.id.contactName, R.id.phoneNumber, R.id.birthdayText};
+        mAdapter = new SimpleCursorAdapter(getActivity().getBaseContext(), R.layout.activity_main,
+                cursor, columns, views, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+        this.setListAdapter(mAdapter);
     }
-    @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.contact_list_fragment, container, false);
-    }
-
 }
