@@ -1,6 +1,8 @@
 package com.example.s236307.birthdayify;
 
 
+import android.content.ContentValues;
+
 import java.util.Date;
 
 public class Contact {
@@ -16,7 +18,7 @@ public class Contact {
         this.birthdayInMillis = birthdayInMillis;
     }
 
-    public Contact (String firstName, String lastName, String phoneNumber, int birthdayInMillis) {
+    public Contact(String firstName, String lastName, String phoneNumber, int birthdayInMillis) {
         this.birthdayInMillis = birthdayInMillis;
         this.firstName = firstName;
         this.lastName = lastName;

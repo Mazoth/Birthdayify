@@ -16,15 +16,17 @@ import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 public class ContactCP extends ContentProvider {
     static final String TAG = "DbHelper";
-    static final String PROVIDER = "com.example.provider.BirthdayPeople";
+    static final String PROVIDER = "com.example.s236307.birthdayify.ContactCP ";
     static final String _ID = "_id";
-    static final String NAME = "name";
-    static final String PHONENUMBER = "phoneNumber";
-    static final String BIRTHDAY = "birthday";
+    public static final String NAME = "name";
+    public static final String PHONENUMBER = "phoneNumber";
+    public static final String BIRTHDAY = "birthday";
 
-    static final Uri CONTENT_URI = Uri.parse("content://" + PROVIDER + "/contacts");
+    public static final Uri CONTENT_URI = Uri.parse("content://" + PROVIDER + "/contacts");
 
     static final int CONTACTS = 1;
 
@@ -43,8 +45,8 @@ public class ContactCP extends ContentProvider {
     static final String TABLE = "contacts";
     SQLiteDatabase db;
     static final String DATABASE_CREATE =
-            "create table" + TABLE + " (" + _ID + " integer primary key autoincrement, "
-                    + NAME + " text not null, " + PHONENUMBER + " text not null, " + BIRTHDAY + "integer);";
+            "create table " + TABLE + " (" + _ID + " integer primary key autoincrement, "
+                    + NAME + " text not null, " + PHONENUMBER + " text not null, " + BIRTHDAY + " integer);";
 
     @Override
     public boolean onCreate() {
@@ -60,8 +62,8 @@ public class ContactCP extends ContentProvider {
         sqlBuilder.setTables(TABLE);
         if (uriMatcher.match(uri) == CONTACTS_ID)
             sqlBuilder.appendWhere(_ID + " = " + uri.getPathSegments().get(1));
-        if (sortOrder == null || sortOrder == "")
-            sortOrder = NAME;
+        if (sortOrder == null || sortOrder.equals(""))
+            sortOrder = BIRTHDAY;
         Cursor cursor = sqlBuilder.query(
                 db,
                 projection,
@@ -137,6 +139,11 @@ public class ContactCP extends ContentProvider {
         }
         getContext().getContentResolver().notifyChange(uri, null);
         return count;
+    }
+
+    public ArrayList<Contact> getAllContacts() {
+        ArrayList<Contact> arrayList = new ArrayList<>();
+        return null;
     }
 
     private static class DatabaseHelper extends SQLiteOpenHelper {
