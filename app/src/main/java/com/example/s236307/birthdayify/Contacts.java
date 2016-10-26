@@ -21,10 +21,6 @@ public class Contacts extends ListFragment {
         cursorLoader = new CursorLoader(getActivity().getBaseContext(),
                 allContacts, null, null, null, null);
         cursor = cursorLoader.loadInBackground();
-        String[] columns = new String[]{ContactCP.NAME, ContactCP.PHONENUMBER, ContactCP.BIRTHDAY};
-        int[] views = new int[]{R.id.contactName, R.id.phoneNumber, R.id.birthdayText};
-        mAdapter = new SimpleCursorAdapter(getActivity().getBaseContext(), R.layout.activity_main,
-                cursor, columns, views, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
-        this.setListAdapter(mAdapter);
+
     }
 }

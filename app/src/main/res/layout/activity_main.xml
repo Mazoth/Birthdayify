@@ -4,10 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical" >
+    <!--<fragment-->
+        <!--android:id="@+id/registerContactFragment"-->
+        <!--android:name="com.example.s236307.birthdayify.fragments.RegisterContactFragment"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"/>-->
     <fragment
-        android:id="@+id/registerContactFragment"
-        android:name="com.example.s236307.birthdayify.fragments.RegisterContactFragment"
+        android:id="@+id/listViewFragment"
+        android:name="com.example.s236307.birthdayify.fragments.ContactListFragment"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"/>
-
 </LinearLayout>

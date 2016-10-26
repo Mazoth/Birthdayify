@@ -1,6 +1,7 @@
 package com.example.s236307.birthdayify.fragments;
 
 import android.app.ListFragment;
+import android.content.CursorLoader;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,22 +10,30 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
+import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
+import com.example.s236307.birthdayify.ContactCP;
 import com.example.s236307.birthdayify.R;
 
 
 public class ContactListFragment extends ListFragment implements OnItemClickListener {
     Cursor cursor;
-    SimpleCursorAdapter cursorAdapter;
+    SimpleCursorAdapter mAdapter;
+    CursorLoader cursorLoader;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.contact_list_fragment, container, false);
-        cursorAdapter = new SimpleCursorAdapter(
-                getActivity(), android.R.layout.simple_list_item_1, cursor,
-                new String [] {"database_table_1", "database_table_2"}, null, 0);
+//        cursorLoader = new CursorLoader(getActivity().getBaseContext(),
+//                ContactCP.CONTENT_URI, null, null, null, null);
+//        cursor = cursorLoader.loadInBackground();
+//        String[] columns = new String[]{ContactCP.NAME, ContactCP.PHONENUMBER, ContactCP.BIRTHDAY};
+//        int[] views = new int[]{R.id.contactName, R.id.phoneNumber, R.id.birthdayText};
+//        mAdapter = new SimpleCursorAdapter(getActivity().getBaseContext(), R.layout.activity_main,
+//                cursor, columns, views, CursorAdapter.FLAG_REGISTER_CONTENT_OBSERVER);
+//        this.setListAdapter(mAdapter);
 
         return view;
     }
@@ -33,7 +42,7 @@ public class ContactListFragment extends ListFragment implements OnItemClickList
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Planets,
-                R.layout.list_row);
+                android.R.layout.simple_list_item_1);k
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }
