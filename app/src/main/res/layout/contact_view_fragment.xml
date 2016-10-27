@@ -1,11 +1,76 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/personDetailScrollView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView
-        android:id="@+id/firstNameText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+    android:layout_height="match_parent">
 
-</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/registerNameText"
+            android:textColor="#ff707070"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/registerNameText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:inputType="textPersonName"
+            android:textColor="#ff222222"
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-light"
+            android:text="@string/registerPhoneText"
+            android:textColor="#ff707070"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/registerPhoneText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="#ff222222"
+            android:inputType="phone"
+            android:hint=""
+            android:textSize="20sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dateOfBirthText"
+            android:textColor="#ff707070"
+            android:textSize="18sp" />
+
+        <DatePicker
+            android:layout_width="match_parent"
+            android:layout_height="95dp"
+            android:id="@+id/dateOfBirthPicker"
+            android:calendarViewShown="false"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/customSMSText"/>
+
+        <EditText
+            android:id="@+id/customSMSText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint=""
+            android:inputType="textMultiLine"
+            android:textColor="#ff222222"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+</ScrollView>

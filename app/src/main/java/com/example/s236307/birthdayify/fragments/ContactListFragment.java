@@ -10,15 +10,14 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
-import android.widget.CursorAdapter;
 import android.widget.SimpleCursorAdapter;
 import android.widget.Toast;
 
-import com.example.s236307.birthdayify.ContactCP;
 import com.example.s236307.birthdayify.R;
 
 
 public class ContactListFragment extends ListFragment implements OnItemClickListener {
+    private static final String TAG = "ContactListFragment";
     Cursor cursor;
     SimpleCursorAdapter mAdapter;
     CursorLoader cursorLoader;
@@ -42,7 +41,7 @@ public class ContactListFragment extends ListFragment implements OnItemClickList
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(getActivity(), R.array.Planets,
-                android.R.layout.simple_list_item_1);k
+                android.R.layout.simple_list_item_1);
         setListAdapter(adapter);
         getListView().setOnItemClickListener(this);
     }

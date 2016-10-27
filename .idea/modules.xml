@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Birthdayify.iml" filepath="$PROJECT_DIR$/Birthdayify.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/birthdayify.iml" filepath="$PROJECT_DIR$/birthdayify.iml" />
     </modules>
   </component>
 </project>

@@ -2,32 +2,11 @@
     <string name="app_name">Birthdayify</string>
     <string name="action_settings">Settings</string>
     <string name="imgdesc">imgdesc</string>
-    <string name="registerNameText">Name</string>
+    <string name="registerNameText">Name:</string>
     <string name="registerPhoneText">Phonenumber:</string>
-    <string name="dateOfBirthText">Date of birth</string>
+    <string name="dateOfBirthText">Birthday:</string>
     <string name="registerButtonText">Add contact</string>
-    <string name="emptyEditTextFieldError">Dette feltet kan ikke være tomt!</string>
-    <string name="phoneLenghtErrorMessage">A standard Norwegian phone number conists of 8 numbers!</string>
-
-    <string-array name="Planets">
-        <item>Sun</item>
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-        <item>Sun</item>
-        <item>Mercury</item>
-        <item>Venus</item>
-        <item>Earth</item>
-        <item>Mars</item>
-        <item>Jupiter</item>
-        <item>Saturn</item>
-        <item>Uranus</item>
-        <item>Neptune</item>
-    </string-array>
-
+    <string name="emptyEditTextFieldError">This field can not be empty!</string>
+    <string name="phoneLenghtErrorMessage">A standard Norwegian phone number consists of 8 numbers!</string>
+    <string name="customSMSText">Make your own greeting:</string>
 </resources>

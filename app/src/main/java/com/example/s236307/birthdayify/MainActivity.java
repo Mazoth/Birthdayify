@@ -1,15 +1,13 @@
 package com.example.s236307.birthdayify;
 
-import android.app.Activity;
-import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.os.Bundle;
-import android.view.View;
+import android.support.v7.app.AppCompatActivity;
 
 import com.example.s236307.birthdayify.fragments.RegisterContactFragment;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
     private FragmentManager fragmentManager;
     private FragmentTransaction fragmentTransaction;
     private RegisterContactFragment registerContactFragment;

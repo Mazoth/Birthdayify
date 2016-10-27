@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class ContactCP extends ContentProvider {
     static final String TAG = "DbHelper";
-    static final String PROVIDER = "com.example.s236307.birthdayify.ContactCP ";
+    static final String PROVIDER = "com.example.s236307.birthdayify.ContactCP";
     static final String _ID = "_id";
     public static final String NAME = "name";
     public static final String PHONENUMBER = "phoneNumber";
@@ -86,7 +86,7 @@ public class ContactCP extends ContentProvider {
             case CONTACTS_ID:
                 return "vnd.android.cursor.item/vnd.example.contacts";
             default:
-                throw new IllegalArgumentException("Unsupported URI:  + uri");
+                throw new IllegalArgumentException("Unsupported URI: + uri");
         }
     }
 
